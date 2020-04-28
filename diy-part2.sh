@@ -83,6 +83,6 @@ temperature_if=$(grep -o "@TARGET_x86" package/lean/autocore/Makefile | wc -l)
 if [[ "$temperature_if" == "1" ]]; then
 	rm -rf package/lean/autocore/files/autocore
 	sed -i "s/@TARGET_x86/@(i386||x86_64||arm||mipsel||mips||aarch64)/g"  package/lean/autocore/Makefile
-	cp $HOME/$OW/$SF/$OCS/Warehouse/index_temperature/autocore  package/lean/autocore/files/autocore
-	cp $HOME/$OW/$SF/$OCS/Warehouse/index_temperature/temperature package/lean/autocore/files/sbin/temperature
+	cp ../Warehouse/index_temperature/autocore  package/lean/autocore/files/autocore
+	cp ../Warehouse/index_temperature/temperature package/lean/autocore/files/sbin/temperature
 fi
