@@ -1,0 +1,30 @@
+#!/bin/sh
+
+info()
+{
+	sen=`sensors | grep  'temp1'  | head -n 1 | cut -c10-24` #获取CPU核心温度(r7800测试正常)
+	sen_na=`sensors | grep  'N/A'  | wc -l`
+	cut_temp=`cut -c1-2 /sys/class/thermal/thermal_zone0/temp`
+	symbol=`echo "°C"`
+
+	if [ "$sen" == "" ];then
+		if [ "$sen_na" == "1" ];then
+			$cut_temp
+			if [[ $? -eq 0 ]]; then
+				a=$cut_temp$symbol
+			else
+				echo "Not Support"
+			fi
+		fi
+	else
+		a=$sen
+	fi
+}
+
+out()
+{
+	info
+	echo " $a "
+}
+
+out
