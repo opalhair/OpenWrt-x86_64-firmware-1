@@ -8,15 +8,15 @@
 
 name: OpenWrt_HaProxy
 
-on:
-  repository_dispatch:
-  release:
-    types: published
-  push:
-    branches:
-      - master
-    paths:
-      - '.config'
+# on:
+#   repository_dispatch:
+#   release:
+#     types: published
+#   push:
+#     branches:
+#       - master
+#     paths:
+#       - '.config'
   schedule:
     - cron: 30 19 * * 5
   watch:
