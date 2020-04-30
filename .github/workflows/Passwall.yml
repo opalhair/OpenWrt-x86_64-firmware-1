@@ -8,19 +8,19 @@
 
 name: OpenWrt_Passwall
 
-on:
-  repository_dispatch:
-  release:
-    types: published
-  push:
-    branches:
-      - master
-    paths:
-      - '.config'
-  schedule:
-    - cron: 30 19 * * 5
-  watch:
-    types: started
+# on:
+#   repository_dispatch:
+#   release:
+#     types: published
+#   push:
+#     branches:
+#       - master
+#     paths:
+#       - '.config'
+#   schedule:
+#     - cron: 30 19 * * 5
+#   watch:
+#     types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
