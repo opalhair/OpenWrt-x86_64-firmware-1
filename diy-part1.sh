@@ -15,7 +15,7 @@
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 # Modify default IP
-sed -i 's/192.168.1.1/10.0.1.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
 
 # Modify Default Password
 sed -i 's/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/root:$1$UmLoGX73$uH5R9TCJBsV.9s9B2twB91:0:0:99999:7:::/g' package/lean/default-settings/files/zzz-default-settings
