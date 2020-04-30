@@ -17,8 +17,8 @@ name: OpenWrt_HaProxy
 #       - master
 #     paths:
 #       - '.config'
-  schedule:
-    - cron: 30 19 * * 5
+#   schedule:
+#     - cron: 30 19 * * 5
   watch:
     types: started
 
